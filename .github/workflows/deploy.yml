@@ -20,9 +20,7 @@ jobs:
           distribution: 'temurin'
 
       - name: Build de l'application Maven
-        run: |
-          chmod +x mvnw
-          ./mvnw clean package -DskipTests
+        run: mvn clean package -DskipTests
 
       - name: Construction de l'image Docker
         run: docker build -t ges-ecole-app:latest .
